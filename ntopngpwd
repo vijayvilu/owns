@@ -1,0 +1,18 @@
+redis-cli SET ntopng.user.vg.password c24e0f650d7b1fd24cae98afb3b08be8 #vg
+redis-cli SET ntopng.user.vg.full_name vg
+redis-cli SET ntopng.user.vg.group administrator
+
+redis-cli DEL ntopng.user.vg.password
+redis-cli DEL ntopng.user.vg.full_name
+redis-cli DEL ntopng.user.vg.group
+
+redis-cli SET ntopng.user.actvm.password e3c9e2fd8bc6f539b3b89023e5e0083 #actvm
+redis-cli SET ntopng.user.actvm.full_name actvm
+redis-cli SET ntopng.user.actvm.group administrator
+
+redis-cli SET ntopng.prefs.vg.ifname vg
+redis-cli SET ntopng.user.vg.full_name vg 
+redis-cli SET ntopng.user.vg.group administrator
+redis-cli SET ntopng.user.vg.password c24e0f650d7b1fd24cae98afb3b08be8
+redis-cli SET ntopng.user.vg.allowed_nets
+
