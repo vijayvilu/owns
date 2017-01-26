@@ -1,0 +1,32 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto enp0s3
+iface enp0s3 inet static
+address 177.0.
+netmask 255.255.255.0
+#network 10.253.0.0
+gateway 177.0
+dns-nameservers 8.8.8.8 
+  post-up   /sbin/ifup lo:1 
+  post-up   /sbin/ifup enp0s8
+  pre-down /sbin/ifdown lo:1 
+#post-up bash -c "echo nameserver 8.8.8.8 >>/etc/resolv.conf"
+##extrainterface
+iface lo:1 inet static
+address 192.168.2.5
+netmask 255.255.255.0
+#network 192.168.2.0
+#broadcast 192.168.2.255
+gateway 192.168.2.1
+# pre-up /sbin/ifup enp0s3
+
+auto enp0s8
+iface enp0s8 inet dhcp
