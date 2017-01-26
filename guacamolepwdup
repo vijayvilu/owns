@@ -1,0 +1,10 @@
+-- Generate salt
+SET @salt = UNHEX(SHA2(UUID(), 256));
+
+-- Update user and hash password with salt
+UPDATE guacamole_user
+SET
+    password_salt = @salt,
+    password_hash = UNHEX(SHA2(CONCAT('mypassword', HEX(@salt)), 256))
+WHERE
+    username = 'myuser';
